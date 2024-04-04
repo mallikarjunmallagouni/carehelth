@@ -1,0 +1,35 @@
+<div class="services">
+    <div class="container-fluid p-0">
+        <div class="service-main">
+          <div class="container">
+            <div class="row service-sub">
+              <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
+                <div class="service-content">
+                  <h3>CareHealth Services</h3>
+                  <p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog.
+                    Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.
+                    Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz.
+                    Brick quiz whangs jumpy veldt fox. Bright vixens jump</p>
+                </div>
+              </div>
+              <div class="offset-xxl-1 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-0">
+                <div class="service-card-main" #scroller1>
+                  <div class="row m-0">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-3 col-xs-3" *ngFor="let service of services">
+                      <div class="service-card">
+                        <img class="service-image" src='../../assets/service-image.png' alt="">
+                        <h4>{{service.heading}}</h4>
+                        <!-- <p>{{service.paragraph}}</p> -->
+  
+                      </div>
+  
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

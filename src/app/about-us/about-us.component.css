@@ -1,0 +1,27 @@
+/* about-us */
+
+  .about-main{
+    background-color:rgba(29, 88, 15, 0.66);
+    padding-bottom: 20vh;
+  }
+  .about-content h3{
+    font-size: 7vw;
+    color: rgb(0, 190, 180);
+    line-height: 5.4vw;
+    color: #fff;
+  }
+  .about-content p{
+    color: #fff;
+    padding-bottom: 17vh;
+    padding-left: 0 !important;
+  }
+  .about-content{
+    position: relative;
+    top: 45%;
+    z-index: 0;
+  }
+  .image{
+    width: 100%;
+    position: relative;
+    top: 70px;
+  }

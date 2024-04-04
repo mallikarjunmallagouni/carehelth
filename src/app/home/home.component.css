@@ -1,0 +1,65 @@
+.banner-content{
+  margin: 40vh 0 0 0;
+  height: 60vh;
+}
+
+  @media screen and (min-width:768px) {
+    .banner-main{
+        background: url(../../assets/home-bg.png),linear-gradient(0deg, #52a7cd54, #f8f4f478);
+        background-repeat: no-repeat;
+        background-size: 112.6vh 100.6vh,100%;
+        width: 100%;
+        background-position: -10vh 0vh,0;
+        position: relative;
+        z-index: 1;
+        border-radius: 0px 0px 50px 0px;
+        box-shadow: 0px 2px 20px 32px rgb(29 88 15 / 39%);
+}
+  .responsive-content-h3{
+    display: none;
+  }
+  .responsive-content-p{
+    display: none;
+  }
+  }
+@media screen and  (max-width:767px) and (min-width:220px){
+  .banner-main{
+    background-size: 52.5vh 100%,100% !important;
+    background-position: 0vh 0vh, 0;
+    border-radius: 6vh;
+    margin: 116px 10px 10px 10px !important;
+    box-shadow: none !important;
+    border: 0.1px solid;
+    border-color: #80808042 !important;
+  }
+  .banner-content{
+    height: -webkit-fill-available !important;
+    text-align: center;
+    background: linear-gradient(10deg, rgb(16, 93, 158), rgb(16 93 158 / 55%));
+    border-radius: 5vh;
+    margin: 19.3vh 0 2vh 0;
+  }
+  .banner{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .responsive-content-h3{
+    padding-top: 2vh;
+    font-size: 6vw;
+    margin: 0;
+  }
+  .banner-content-head{
+    display: none;
+  }
+  .banner-content-para{
+    display: none;
+  }
+  .responsive-content-h3{
+    color: #fff;
+  }
+  .responsive-content-p{
+    color: #fff;
+  }
+}
+
+ 

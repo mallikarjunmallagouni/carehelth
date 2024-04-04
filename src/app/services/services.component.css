@@ -1,0 +1,108 @@
+  .service-sub{
+    justify-content: center;
+     align-items: center;
+ }
+ .service-main{
+   background:linear-gradient(49deg,  rgb(2, 69, 112),  rgb(2 69 112 / 30%)), url(../../assets/service-bg-image.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 72vh;
+   padding: 104px 0;
+ }
+ .service-content{
+   position: relative;
+   top: 30%;
+   color: #fff;
+ }
+ .service-content h3{
+   color: #fff;
+   line-height: 6vw;
+ }
+ .service-card-main{
+   display: flex;
+   flex-wrap: wrap;
+   height: 437px;
+   overflow-y: scroll;
+ }
+ .service-card{
+   text-align: center;
+   padding: 20px 0px 0px 10px;
+ }
+ .service-card h4{
+   padding-top: 20px;
+ }
+ .service-card p{
+   text-align: center;
+ }
+ .service-image{
+   width: 40%;
+ }
+ /* width */ 
+ ::-webkit-scrollbar {
+   width: 5px;
+ } 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   background: #eee;
+   border-radius: 5px;
+   margin: 10px 0px 10px 0px;
+ } 
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: rgba(29, 88, 15, 0.66);
+   border-radius: 5px;
+ }
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+   background: rgba(29, 88, 15, 0.66);
+ }
+ @media screen and (max-width:767px)  and (min-width:220px){
+   .service-card p{
+     display: none;
+   }
+   .services{
+    margin-top: 100px;
+}
+   .service-main{
+     background-size: 100% 65vh !important;
+     background-position: bottom;
+     padding: 0px 0 104px 0;
+ }
+ .service-sub{
+   display: flex;
+   flex-direction: column-reverse;
+ }
+ .service-sub h2{
+  text-align: center;
+  font-size: 6vw;
+}
+ .service-content{
+   text-align: center !important;
+   margin-top: 100px;
+   margin-bottom: 70px;
+ }
+ .service-card-main {
+   margin-top: 0px;
+   position: relative;
+   display: flex;
+   justify-content: space-around;
+ } 
+ .service-card h4{
+   font-size: 3vw;
+ }
+ ::-webkit-scrollbar {
+   display: none;
+ } 
+ }
+ @media screen and (min-width:768px){
+   .service-card h4{
+     font-size: 3vh;
+   }
+   .service-card-main {
+     height: 80vh;
+     overflow-y: scroll;
+     background-color: #ffffff59;
+     backdrop-filter: blur(13px);
+     border-radius: 4px;
+   }  
+ }

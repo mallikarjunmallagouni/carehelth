@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-h3, .mat-subtitle-1, .mat-typography .mat-h3, .mat-typography .mat-subtitle-1, .mat-typography h3{
+    font-size: 7vw;
+    color: rgb(39 180 5 / 68%);
+    line-height: 5.4vw;
+}
+.carousel-indicators [data-bs-target]{
+    background-color: #00beb4;
+    height: 10px;
+    width: 10px;
+    border: 1px solid#00beb4;
+    border-radius: 10px;
+}
+.banner-content .carousel-indicators{
+    margin-bottom: -10px;
+    margin-left: 7px;
+    right: auto;
+}
+.clients .carousel-indicators{
+    margin-bottom: -10px;
+}
+.carousel-control-prev-icon{
+    display: none;
+}
+.carousel-control-next-icon{
+    display: none;
+}
+.mat-toolbar-row, .mat-toolbar-single-row{
+    display: flex;
+    justify-content: space-between;
+}
+.mat-drawer-container{
+    background-color: none !important;
+}
+.mat-toolbar.mat-primary {
+    background: rgb(16, 93, 158);
+    width: 150px;
+}
+.mat-mdc-list-base{
+    margin-top: -10px !important;
+}
+.mat-typography p{
+    padding-left: 7px;
+    line-height: 31px;
+}
+.mat-mdc-list-base{
+    position: fixed;
+}
+.mat-drawer{
+    position: fixed !important;
+}
+/* .mdc-list-item.mdc-list-item--with-one-line{
+    width: 149.6px;
+} */
+
+@media screen and (min-width:768px) {
+    .mat-toolbar-multiple-rows {
+        display: none !important;
+    }
+  }
+  @media screen and (max-width:767px)  and (min-width:220px){
+    .mat-toolbar-row, .mat-toolbar-single-row{
+        position: relative !important;
+        z-index: 2;
+        height: auto !important;
+        padding-top: 10px !important;
+    }
+    .mat-toolbar-multiple-rows{
+        z-index: 2;
+        color: #fff;
+        /* background-color: rgb(16, 93, 158); */
+        background: linear-gradient(10deg, rgb(16, 93, 158), rgb(16 93 158 / 72%));
+        /* position: fixed; */
+    }
+    .banner-main{
+        background: url(./assets/home-bg.png),linear-gradient(0deg, #52a7cd8c, #f8f4f478);
+        background-repeat: no-repeat;
+        background-size: 81vh,100%;
+        background-position: -8vh 11vh, 0;
+        position: relative;
+        z-index: 1;
+        border-radius: 0px 0px 50px 0px;
+        box-shadow: 0px 2px 20px 32px rgb(29 88 15 / 39%);
+    }
+    .carousel-indicators{
+        display: flex;
+        align-items: center;
+        margin-left: 0 !important;
+        right: 0 !important;
+        margin-right: 0 !important; 
+        bottom: 2vh;
+    }
+    .picsum-img-wrapper{
+        padding-bottom: 3vh;
+    }
+    .carousel-indicators [data-bs-target]{
+        background-color: #fff;
+    }
+  }
+
+
+
+

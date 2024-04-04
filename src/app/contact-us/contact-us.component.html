@@ -1,0 +1,37 @@
+<div class="wrapper-box">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="main-form" #myForms="ngForm">
+    <div>
+      <label for="email">Email *</label>
+      <br>
+      <input type="email" id="email" formControlName="email" required>
+      <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+        <div *ngIf="myForm.get('email')?.hasError('required')" [ngStyle]="{'color': 'red'}">Email is required</div>
+        <div *ngIf="myForm.get('email')?.hasError('email')">Invalid email format</div>
+      </div>
+    </div>
+    <div>
+      <label for="name">Name *</label>
+      <br>
+      <input type="text" id="name" formControlName="name" required>
+      <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"  [ngStyle]="{'color': 'red'}">
+        Name is required
+      </div>
+    </div>
+    <div>
+      <label for="name">Mobile *</label>
+      <br>
+      <input type="text" id="mobile" formControlName="mobile" required>
+      <div *ngIf="myForm.get('mobile')?.invalid && myForm.get('mobile')?.touched"  [ngStyle]="{'color': 'red'}">
+        Mobile Number is required
+      </div>
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <br>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success"  [disabled]="myForm.invalid" (click)="onSubmit()">Submit</button>
+  </form>
+  </div>
+
+  

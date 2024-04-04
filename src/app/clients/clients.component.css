@@ -1,0 +1,22 @@
+.clients{
+    margin-top: 92px;
+}
+.service-main{
+    background:linear-gradient(49deg,  rgb(2, 69, 112),  rgb(2 69 112 / 30%)), url(../../assets/service-bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .service-content{
+    position: relative;
+    /* top: 30%; */
+    color: #fff;
+  }
+  .service-content h3{
+    color: #fff;
+    line-height: 6vw;
+  }
+  .service-sub h2{
+    text-align: center;
+    color: #fff;
+    font-size: 6vw;
+  }

@@ -1,0 +1,158 @@
+<div class="container-fluid p-0">
+  <div class="nav-main" [class.nav_change]="nav_variable">
+    <div class="container p-0">
+      <div class="nav-menu">
+        <div class="row">
+          <div class="col-4 p-0">
+            <div class="nav-logo">
+              <img src="../../assets/logo.png" alt="logo">
+            </div>
+          </div>
+          <div class="col-8 p-0">
+            <div class="nav-response">
+              <a class='nav-link active' (click)="scrollToSection('home')" aria-current="page"
+                [ngClass]="{'active': activeSection === 'home' }" routerLink="">Home</a>
+              <a class='nav-link' (click)="scrollToSection('about-us')"
+                [ngClass]="{'active': activeSection === 'about-us'}" routerLink="">About Us</a>
+              <a class='nav-link' (click)="scrollToSection('services')"
+                [ngClass]="{'active': activeSection === 'services' }" routerLink="">Services</a>
+              <a class='nav-link' (click)="scrollToSection('clients-review')"
+                [ngClass]="{'active': activeSection ===  'clients-review'}" routerLink="">clients</a>
+              <a class='nav-link' routerLinkActive="active" (click)="scrollToSection('contact-us')"
+                [ngClass]="{'active': activeSection ===  'contact-us'}" tabindex="-1" routerLink="contact-us">Contact
+                Us</a>
+              <button (click)="openModel() "><span class="material-symbols-outlined">person_add</span><a>Enquire
+                  Now</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-ng">
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}" fixedInViewport="false"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+        <mat-toolbar color="primary" style="z-index: 2;">Menu</mat-toolbar>
+        <mat-nav-list>
+          <a mat-list-item routerLinkActive="active" aria-current="page" routerLink="home">Home</a>
+          <a mat-list-item routerLinkActive="active" routerLink="about-us">About Us</a>
+          <a mat-list-item routerLinkActive="active" routerLink="services">Services</a>
+          <a mat-list-item routerLinkActive="active" routerLink="clients-review">Clients</a>
+          <a mat-list-item routerLinkActive="active" routerLink="contact-us" tabindex="-1">Contact Us</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar class="position-fixed">
+          <mat-toolbar-row>
+            <div class="email">
+              <span class="material-symbols-outlined">mark_email_unread</span>
+              <h4>info@carehealth.ind.in</h4>
+            </div>
+            <div class="contact">
+              <span class="material-symbols-outlined">call</span>
+              <h4>+91 9492123402</h4>
+            </div>
+          </mat-toolbar-row>
+          <mat-toolbar-row>
+            <img src="../../assets/logo.png" alt="logo" class="angular-logo">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
+
+
+<!-- footer -->
+<mat-toolbar class="footer-bottom">
+  <div class="footer-service">
+    <a mat-list-item routerLinkActive="active" routerLink="home" aria-current="page"><span
+        class="material-symbols-outlined">key_visualizer</span></a>
+    <a>Home</a>
+  </div>
+  <div class="footer-service">
+    <a mat-list-item routerLinkActive="active" routerLink="about-us"><span
+        class="material-symbols-outlined">notifications</span></a>
+    <a>About-Us</a>
+  </div>
+  <div class="footer-service">
+    <a mat-list-item routerLinkActive="active" routerLink="services"><span
+        class="material-symbols-outlined">explore</span></a>
+    <a>Services</a>
+  </div>
+  <div class="footer-service">
+    <a mat-list-item routerLinkActive="active" routerLink="clients-review"><span
+        class="material-symbols-outlined">person</span></a>
+    <a>Clients</a>
+  </div>
+  <div class="footer-service">
+    <a mat-list-item routerLinkActive="active" routerLink="contact-us"><span
+        class="material-symbols-outlined">settings</span></a>
+    <a>Contact Us</a>
+  </div>
+</mat-toolbar>
+
+
+
+<!-- popup -->
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Enuire Now</h4>
+        <button type="button" class="btn-close" (click)="CloseModel()" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper-box">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="main-form" #myForms="ngForm">
+            <div>
+              <label for="name">Name *</label>
+              <br>
+              <input type="text" id="name" formControlName="name" required>
+              <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched" [ngStyle]="{'color': 'red'}">
+                Name is required
+              </div>
+            </div>
+            <div>
+                <label for="name">Contact Number *</label>
+                <br>
+                <input type="text" id="mobile" formControlName="mobile" required>
+                <div *ngIf="myForm.get('mobile')?.invalid && myForm.get('mobile')?.touched" [ngStyle]="{'color': 'red'}">
+                  Mobile Number is required
+                </div>
+              </div>
+            <div>
+              <label for="email">Email Address *</label>
+              <br>
+              <input type="email" id="email" formControlName="email" required>
+              <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+                <div *ngIf="myForm.get('email')?.hasError('required')" [ngStyle]="{'color': 'red'}">Email is required
+                </div>
+                <div *ngIf="myForm.get('email')?.hasError('email')">Invalid email format</div>
+              </div>
+            </div>
+            <div>
+              <label for="description">Enuiry Details</label>
+              <br>
+              <textarea id="description" formControlName="description"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success"  [disabled]="myForm.invalid" (click)="onSubmit()">Submit Your Enquiry</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="CloseModel()">Close</button>
+              </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
